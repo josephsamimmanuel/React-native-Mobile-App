@@ -9,7 +9,7 @@ interface SearchBarProps {
     onPress: () => void;
 }
 
-export const SearchBar = ({ placeholder, query, setQuery, onPress }: SearchBarProps) => {
+export const SearchBar = ({ placeholder, query, setQuery, onPress, editable }: SearchBarProps) => {
     return (
         <TouchableOpacity onPress={onPress} className="flex-row items-center bg-white/20 rounded-full px-4 py-2 w-[90%]">
             <Image source={icons.search} className="w-5 h-5" resizeMode="contain" />
@@ -20,7 +20,7 @@ export const SearchBar = ({ placeholder, query, setQuery, onPress }: SearchBarPr
                 value={query}
                 onChangeText={setQuery}
                 returnKeyType="search"
-                editable={false}
+                editable={editable}
             />
         </TouchableOpacity>
     )
